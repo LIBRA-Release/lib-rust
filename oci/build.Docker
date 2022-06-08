@@ -1,0 +1,20 @@
+#
+#  author: apolo_yasuda@yahoo.co.jp
+#
+
+FROM rust:slim
+
+USER root
+WORKDIR /root
+
+COPY ./Cargo.toml ./
+COPY ./$USERNAME/ ./$USERNAME/
+
+RUN rustup override set nightly && \
+cargo build --release --all-features
+
+RUN echo '#!/bin/bash' > ./~$USERNAME \
+&& echo 'source <(wget -q -O - https://raw.githubusercontent.com/LIBRA-Release/lib-rust/main/scripts/build.sh) "$@"' >> ./~$USERNAME \
+&& chmod +x ./~$USERNAME && tree ./
+
+ENTRYPOINT ["./~$USERNAME"]
