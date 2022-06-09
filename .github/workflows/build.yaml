@@ -1,4 +1,4 @@
-name: Build & Publish LIBRA Specs
+name: Build & Publish LIBRA Build Dep Package
 on:
   workflow_dispatch:
 
