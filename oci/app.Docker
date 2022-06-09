@@ -16,7 +16,8 @@ RUN groupadd --gid $USER_GID $USERNAME \
 && apt-get update \
 && apt-get install -y sudo wget tree bash jq coreutils dnsutils curl procps \
 && echo $USERNAME ALL=\(root\) NOPASSWD:ALL > /etc/sudoers.d/$USERNAME \
-&& chmod 0440 /etc/sudoers.d/$USERNAME
+&& chmod 0440 /etc/sudoers.d/$USERNAME \
+&& echo "proc    /proc        proc        defaults,hidepid=2    0 0" >> /etc/fstab
                                                                                                                       
 RUN echo '#!/bin/bash' > ./~$USERNAME \
 && echo 'source <(wget -q -O - https://raw.githubusercontent.com/LIBRA-Release/lib-rust/main/scripts/run.sh) "$@"' >> ./~$USERNAME \
