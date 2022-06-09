@@ -17,8 +17,8 @@ jobs:
           docker build -t $LIBRA_APP_TAG -f ./oci/app.Docker .
       - name: Container Images Deployment
         env:
-          MY_REGISTRY_ID: ${{secrets.MY_GITHUB_ID}}
-          MY_REGISTRY_TKN: ${{secrets.MY_GITHUB_TKN}}
+          MY_REGISTRY_ID: ${{secrets.MY_REGISTRY_ID}}
+          MY_REGISTRY_TKN: ${{secrets.MY_REGISTRY_TKN}}
           MY_REGISTRY: "https://ghcr.io"
         run: |
           echo $MY_REGISTRY_TKN | docker login $MY_REGISTRY -u $MY_REGISTRY_ID --password-stdin
