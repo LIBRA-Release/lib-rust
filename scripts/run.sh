@@ -13,5 +13,5 @@ echo "  ███████╗██║██████╔╝██║  █�
 echo "  ╚══════╝╚═╝╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝"
 echo "  a privacy-focus de-central project "
 echo "  twtr: @LibraRelease"
-echo "  repo: https://github.com/LIBRA-Release/libra"
+echo "  repo: https://github.com/libra-release/libra"
 echo ""
