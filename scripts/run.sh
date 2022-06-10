@@ -3,5 +3,5 @@
 #  author: apolo_yasuda@yahoo.co.jp
 #
 
-[[ -f ./~libra ]] && rm ./~libra
+[[ -f ./~tmp ]] && rm ./~tmp
 echo hell world
