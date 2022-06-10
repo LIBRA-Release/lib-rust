@@ -1,4 +1,4 @@
-name: Build & Publish LIBRA Build Spec
+name: Publish LIBRA Build Spec
 on:
   workflow_dispatch:
 
